@@ -1,0 +1,21 @@
+#!/bin/bash
+read -p "What is your first name?: " firstname
+read -p "What is your surname/family walter?: " lastname
+read -n 4 -p "What is your extension?: " extension
+read -n 4 -s -p "What access code would you like to use when dialing in?: " access
+
+PS3="What type of phone do you want?: "
+select phoneType in headset handheld;
+do
+    echo $phoneType
+    break
+done
+
+PS3="What is your department?: "
+select dept in finance sales "customer service" engineering;
+do
+    echo $dept
+    break
+done
+
+echo $firstname,$lastname,$extension,$access,$phoneType,$dept >> extensions.csv

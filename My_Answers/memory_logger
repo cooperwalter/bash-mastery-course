@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Author: Cooper Walter
+
+# Description
+# Logs the current memory usage to $home/performance/memory.log. If memory.log
+# doesn't exist, creates it.
+
+if [ -d $HOME/performance ]; then
+    echo "$HOME/performance exists"
+else
+    echo "Creating folder $HOME/performance"
+    mkdir $HOME/performance
+fi
+
+free >> $HOME/performance/memory.log

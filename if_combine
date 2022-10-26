@@ -1,0 +1,11 @@
+#!/bin/bash
+
+a=$(cat file1.txt)
+b=$(cat file2.txt)
+c=$(cat file3.txt)
+if [ $a = $b ] || [ $a = $c ]; then
+    echo "file1.txt equals file2.txt, removing file2.txt and file3.txt"
+    rm file[2-3].txt
+else
+    echo "Files do not match"
+fi;
